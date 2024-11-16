@@ -9,9 +9,19 @@ import {
   FaDoorClosed,
   FaHome,
 } from "react-icons/fa";
+import { useWallet } from "@suiet/wallet-kit";
 
 // components/Sidebar.js
 export default function Sidebar() {
+  const { connected, disconnect } = useWallet(); // destructuring the connect and disconnect function fron useWallet
+
+  // function to isconnect the wallet and log you out
+  const handleDisconnect = () => {
+    if (connected) {
+      disconnect();
+    }
+  };
+
   return (
     <div className='bg-blue-900 text-white h-screen sticky top-0 left-0 p-6  flex flex-col'>
       <h1 className='text-2xl font-bold mb-8'>SuiFi.</h1>
@@ -54,15 +64,16 @@ export default function Sidebar() {
           <span>Statistics</span>
         </a>
       </nav>
-      <a
-        href='#'
-        className='mt-auto flex items-center space-x-3 hover:bg-blue-800 p-2 rounded-md'
+
+      <div
+        onClick={handleDisconnect}
+        className='mt-auto cursor-pointer flex items-center space-x-3 hover:bg-blue-800 p-2 rounded-md'
       >
         <span>
           <FaDoorClosed />
         </span>{" "}
         <span>Logout</span>
-      </a>
+      </div>
     </div>
   );
 }

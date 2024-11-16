@@ -1,4 +1,4 @@
-"use client"
+"use client" // Ensure this is a Client Component
 // pages/index.js
 import { useWallet } from "@suiet/wallet-kit";
 import Sidebar from "../_components/Sidebar";
@@ -17,6 +17,7 @@ export default function Home() {
   const wallet = useWallet();
   const router = useRouter();
 
+  // checks if wallet is connected, if not it routes you to the connect wallet screen
   useEffect(() => {
     if (!wallet.connected) {
       router.push("/");
