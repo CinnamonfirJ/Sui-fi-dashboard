@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const testimonials = [
@@ -39,7 +40,7 @@ export const Testimonials = () => {
 
         <div className=' relative flex gap-8 mt-10 mb-10'>
           <div className=' [mask-image:linear-gradient(to_right,transparent,white_10%,white_80%,transparent)] pointer-events-none'></div>
-          {/* <motion.div
+          <motion.div
             initial={{ translateX: "-50%" }}
             animate={{ translateX: "0" }}
             transition={{
@@ -49,34 +50,34 @@ export const Testimonials = () => {
             }}
             className='flex gap-5 flex-none'
           >
-          </motion.div> */}
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <div
-              key={index}
-              className='relative border border-black rounded-xl p-6 md:p-10 hover:bg-accent transition duration-300 max-w-xs md:max-w-md flex-none'
-            >
-              <div className='text-lg md:text-2xl tracking-tight'>
-                {testimonial.text}
-              </div>
-              <div className='flex items-center gap-3 mt-5'>
-                <div className='relative after:content-[""] after:absolute after:inset-0 after:bg-[rgb(89,194,232)] after:mix-blend-soft-light'>
-                  <Image
-                    src={"/img1.jfif"}
-                    width={20}
-                    height={20}
-                    alt={`Avatar for ${testimonial.name}`}
-                    className='h-11 w-11 rounded-lg grayscale'
-                  />
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <div
+                key={index}
+                className='relative border border-black rounded-xl p-6 md:p-10 hover:bg-accent transition duration-300 max-w-xs md:max-w-md flex-none'
+              >
+                <div className='text-lg md:text-2xl tracking-tight'>
+                  {testimonial.text}
                 </div>
-                <div>
-                  <div>{testimonial.name}</div>
-                  <div className='text-black/70 text-sm'>
-                    {testimonial.title}
+                <div className='flex items-center gap-3 mt-5'>
+                  <div className='relative after:content-[""] after:absolute after:inset-0 after:bg-[rgb(89,194,232)] after:mix-blend-soft-light'>
+                    <Image
+                      src={"/img1.jfif"}
+                      width={20}
+                      height={20}
+                      alt={`Avatar for ${testimonial.name}`}
+                      className='h-11 w-11 rounded-lg grayscale'
+                    />
+                  </div>
+                  <div>
+                    <div>{testimonial.name}</div>
+                    <div className='text-black/70 text-sm'>
+                      {testimonial.title}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
