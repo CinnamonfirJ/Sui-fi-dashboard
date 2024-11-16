@@ -1,25 +1,29 @@
-"use client" // Ensure this is a Client Component
-// pages/index.js
-import { ConnectButton } from '@suiet/wallet-kit';
-import { useWallet } from '@suiet/wallet-kit';
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import Navbar from "./_components/Navbar";
+import End from "./_sections/End";
+import Footer from "./_sections/Footer";
+import Hero from "./_sections/Hero";
+import { Testimonials } from "./_sections/Testimonials";
+import Why from "./_sections/Why";
 
 export default function Home() {
-  const wallet = useWallet()
-  const router = useRouter()
-
-  // checks if wallet is connected, then routes you to the dashboard
-  useEffect(() => {
-    if(wallet.connected) {
-      router.push('/dashboard');
-    }
-  }, [wallet.connected, router])
-
   return (
-    <div className='flex flex-col gap-3 min-w-screen min-h-screen justify-center items-center bg-gray-100'>
-      <p className='font-bold text-xl text-blue-500'>Connect Your Wallet to Sign In</p>
-      <ConnectButton>Connect Wallet</ConnectButton>
-    </div>
+    <main>
+      <Navbar />
+      <section className=' bg-primary'>
+        <Hero />
+      </section>
+      <section className=' mx-auto container'>
+        <Why />
+      </section>
+      <section className=' mx-auto container'>
+        <Testimonials />
+      </section>
+      <section className=' mx-auto container'>
+        <End />
+      </section>
+      <section>
+        <Footer />
+      </section>
+    </main>
   );
 }

@@ -1,4 +1,4 @@
-"use client" // Ensure this is a Client Component
+"use client"; // Ensure this is a Client Component
 // pages/index.js
 import { useWallet } from "@suiet/wallet-kit";
 import Sidebar from "../_components/Sidebar";
@@ -26,19 +26,21 @@ export default function Home() {
 
   return (
     <div className='flex min-h-screen bg-gray-100'>
-      <Sidebar />
+      <div className=' max-md:hidden'>
+        <Sidebar />
+      </div>
       <main className='flex-1 p-10'>
         <Header />
-        <div className='mt-10 grid grid-cols-3 gap-6'>
+        <div className='mt-10 grid grid-cols-3 max-lg:grid-cols-2 gap-6'>
           <div className='col-span-2'>
             <WalletBalance />
-            <CardGrid />
+            {/* <CardGrid /> */}
             <div className=' mt-10'>
               <h3 className='text-xl font-bold mb-6'>Tasks</h3>
-              <div className=' grid grid-cols-2  gap-6 '>
-                <MinerCard task='Invite' balance={"200"} />
-                <MinerCard task='Invite' balance={"200"} />
-                <MinerCard task='Invite' balance={"200"} />
+              <div className=' grid grid-cols-2 max-lg:grid-cols-1  gap-6 '>
+                <MinerCard task='Invite 1' balance={"200"} />
+                <MinerCard task='Invite 5' balance={"500"} />
+                <MinerCard task='Invite 10' balance={"3000"} />
               </div>
             </div>
             <TransactionsList />

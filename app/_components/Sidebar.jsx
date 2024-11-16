@@ -23,56 +23,56 @@ export default function Sidebar() {
   };
 
   return (
-    <div className='bg-blue-900 text-white h-screen sticky top-0 left-0 p-6  flex flex-col'>
-      <h1 className='text-2xl font-bold mb-8'>SuiFi.</h1>
+    <div className='bg-gradient-to-b from-primary to-accent text-white h-screen sticky top-0 left-0 p-6  flex flex-col'>
+      <h1 className='text-2xl font-bold mb-8 max-lg:hidden'>SuiFi.</h1>
       <nav className='space-y-8'>
         <a
           href='#'
-          className='flex items-center space-x-3 hover:bg-blue-800 p-2 rounded-md'
+          className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
             <FaHome />
           </span>{" "}
-          <span>Home</span>
+          <span className=' max-lg:hidden'>Home</span>
         </a>
         <a
           href='#'
-          className='flex items-center space-x-3 hover:bg-blue-800 p-2 rounded-md'
+          className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
             <FaMoneyBill />
           </span>{" "}
-          <span>Payments</span>
+          <span className=' max-lg:hidden'>Payments</span>
         </a>
         <a
           href='#'
-          className='flex items-center space-x-3 hover:bg-blue-800 p-2 rounded-md'
+          className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
             <FaExchangeAlt />
           </span>{" "}
-          <span>Earn</span>
+          <span className=' max-lg:hidden'>Earn</span>
         </a>
         <a
           href='#'
-          className='flex items-center space-x-3 hover:bg-blue-800 p-2 rounded-md'
+          className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
             {" "}
             <FaUsers />
           </span>{" "}
-          <span>Statistics</span>
+          <span className=' max-lg:hidden'>Statistics</span>
         </a>
       </nav>
 
       <div
         onClick={handleDisconnect}
-        className='mt-auto cursor-pointer flex items-center space-x-3 hover:bg-blue-800 p-2 rounded-md'
+        className='mt-auto cursor-pointer flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
       >
         <span>
           <FaDoorClosed />
         </span>{" "}
-        <span>Logout</span>
+        <span className=' max-lg:hidden'>Logout</span>
       </div>
     </div>
   );
