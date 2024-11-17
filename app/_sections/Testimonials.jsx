@@ -60,7 +60,7 @@ export const Testimonials = () => {
                 </div>
                 <div className='flex items-center gap-3 mt-5'>
                   <div className='relative after:content-[""] after:absolute after:inset-0 after:bg-[rgb(89,194,232)] after:mix-blend-soft-light'>
-                    <Image
+                    <img
                       src={"/img1.jfif"}
                       width={20}
                       height={20}
