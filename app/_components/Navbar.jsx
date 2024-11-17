@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function Navbar() {
   return (
     <header className='bg-primary flex justify-between items-center p-5'>
@@ -5,31 +7,32 @@ function Navbar() {
         <img src='/image1.png' className=' h-8' />
       </div>
       <nav>
-        <ul className=' flex justify-center items-center gap-4 text-white max-lg:hidden'>
+        <ul className='flex justify-center items-center gap-6 text-white max-lg:hidden'>
           <li>
-            <a href='#'>Home</a>
+            <Link href='/'>Home</Link>
           </li>
           <li>
-            <a href='#'>Services</a>
+            <Link href='/'>Services</Link>
           </li>
           <li>
-            <a href='#'>Whitepaper</a>
+            <Link href='/'>Whitepaper</Link>
           </li>
           <li>
-            <a href='#'>Team</a>
+            <Link href='/'>Team</Link>
           </li>
           <li>
-            <a href='#'>FAQ</a>
+            <Link href='/'>FAQ</Link>
           </li>
         </ul>
       </nav>
-      <div className=' flex max-md:justify-end gap-8'>
-        <a href='/connectWallet'>
-          <button className=' bg-white py-2 px-8 rounded-xl'>Sign In</button>
-        </a>
-        <button className=' bg-gradient-to-r from-primary to-accent text-white py-2 px-8 rounded-xl max-sm:hidden'>
+      <div className='flex max-md:justify-end gap-8'>
+        <Link href='/connectWallet' className=' bg-white py-2 px-8 rounded-xl'>
+          Sign In
+        </Link>
+
+        <Link href='/' className='bg-gradient-to-r from-primary to-accent text-white py-2 px-8 rounded-xl max-sm:hidden'>
           Watch Demo
-        </button>
+        </Link>
       </div>
     </header>
   );

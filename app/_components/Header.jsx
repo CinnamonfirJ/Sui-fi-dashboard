@@ -1,6 +1,6 @@
 "use client";
 import { FaBell } from "react-icons/fa";
-import { ConnectButton } from "@suiet/wallet-kit";
+// import { ConnectButton } from "@suiet/wallet-kit";
 
 // components/DashboardHeader.js
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
         <p className='text-gray-600'>Welcome back,</p>
         <h2 className='text-2xl text-primary font-bold'>@pTech988</h2>
       </div>
-      <ConnectButton />
+      {/* <ConnectButton /> */}
       <div className='flex items-center space-x-4'>
         <button className='text-gray-600 hover:text-gray-800'>
           <FaBell />

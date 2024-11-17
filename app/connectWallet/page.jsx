@@ -12,7 +12,7 @@ export default function Home() {
   // checks if wallet is connected, then routes you to the dashboard
   useEffect(() => {
     if (wallet.connected) {
-      router.push("/dashboard");
+      router.push("./dashboard");
     }
   }, [wallet.connected, router]);
 
@@ -21,7 +21,7 @@ export default function Home() {
       <p className='font-bold text-xl text-primary'>
         Connect Your Wallet to Sign In
       </p>
-      <ConnectButton className='bg-primary hover:bg-accent'>
+      <ConnectButton className='bg-primary text-white hover:bg-accent'>
         Connect Wallet
       </ConnectButton>
     </div>

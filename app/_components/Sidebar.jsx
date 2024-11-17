@@ -10,6 +10,7 @@ import {
   FaHome,
 } from "react-icons/fa";
 import { useWallet } from "@suiet/wallet-kit";
+import Link from "next/link";
 
 // components/Sidebar.js
 export default function Sidebar() {
@@ -26,35 +27,35 @@ export default function Sidebar() {
     <div className='bg-gradient-to-b from-primary to-accent text-white h-screen sticky top-0 left-0 p-6  flex flex-col'>
       <h1 className='text-2xl font-bold mb-8 max-lg:hidden'>SuiFi.</h1>
       <nav className='space-y-8'>
-        <a
-          href='#'
+        <Link
+          href='./dashboard'
           className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
             <FaHome />
           </span>{" "}
           <span className=' max-lg:hidden'>Home</span>
-        </a>
-        <a
-          href='#'
+        </Link>
+        <Link
+          href='./dashboard'
           className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
             <FaMoneyBill />
           </span>{" "}
           <span className=' max-lg:hidden'>Payments</span>
-        </a>
-        <a
-          href='#'
+        </Link>
+        <Link
+          href='./dashboard'
           className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
             <FaExchangeAlt />
           </span>{" "}
           <span className=' max-lg:hidden'>Earn</span>
-        </a>
-        <a
-          href='#'
+        </Link>
+        <Link
+          href='./dashboard'
           className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
@@ -62,7 +63,7 @@ export default function Sidebar() {
             <FaUsers />
           </span>{" "}
           <span className=' max-lg:hidden'>Statistics</span>
-        </a>
+        </Link>
       </nav>
 
       <div

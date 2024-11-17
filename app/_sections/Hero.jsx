@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Hero() {
@@ -16,14 +17,12 @@ function Hero() {
           economy
         </p>
         <div className=' flex gap-8 mb-12'>
-          <a href='/connectWallet'>
-            <button className=' bg-white text-black py-2 px-8 rounded-xl'>
-              Sign In
-            </button>
-          </a>
-          <button className=' bg-gradient-to-r from-primary to-accent text-white py-2 px-8 rounded-xl'>
+          <Link href='/connectWallet' className=' bg-white text-black py-2 px-8 rounded-xl'>
+            Sign In
+          </Link>
+          <Link href='/' className=' bg-gradient-to-r from-primary to-accent text-white py-2 px-8 rounded-xl'>
             Watch Demo
-          </button>
+          </Link>
         </div>
         <div>
           <img src='/image2.png' alt='' />

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function End() {
@@ -17,14 +18,12 @@ function End() {
           smooth, on-demand financial operations
         </p>
         <div className=' flex max-md:justify-end gap-8'>
-          <a href='/connectWallet'>
-            <button className=' bg-white text-primary py-2 px-8 rounded-xl'>
-              Sign In
-            </button>
-          </a>
-          <button className=' bg-gradient-to-r from-primary to-accent text-white py-2 px-8 rounded-xl max-sm:hidden'>
+          <Link href='/connectWallet' className='bg-white text-primary py-2 px-8 rounded-xl'>
+            Sign In
+          </Link>
+          <Link href='/' className='bg-gradient-to-r from-primary to-accent text-white py-2 px-8 rounded-xl max-sm:hidden'>
             Watch Demo
-          </button>
+          </Link>
         </div>
       </div>
     </div>
