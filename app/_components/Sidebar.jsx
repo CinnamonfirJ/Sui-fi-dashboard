@@ -37,7 +37,7 @@ export default function Sidebar() {
           <span className=' max-lg:hidden'>Home</span>
         </Link>
         <Link
-          href='./dashboard'
+          href='/Payment'
           className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
@@ -46,7 +46,7 @@ export default function Sidebar() {
           <span className=' max-lg:hidden'>Payments</span>
         </Link>
         <Link
-          href='./dashboard'
+          href='/Earn'
           className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
@@ -55,7 +55,7 @@ export default function Sidebar() {
           <span className=' max-lg:hidden'>Earn</span>
         </Link>
         <Link
-          href='./dashboard'
+          href='/Statistics'
           className='flex items-center space-x-3 hover:bg-accent p-2 rounded-md'
         >
           <span>
