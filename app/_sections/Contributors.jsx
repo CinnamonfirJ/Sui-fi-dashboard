@@ -7,7 +7,7 @@ function Contributors() {
   const contributors = [
     {
       name: "Alago Ugochi Precious",
-      role: "Assistant team lead and social media handler",
+      role: "Assistant team lead, social media Manager",
       imgUrl: "/team1.jpg",
     },
     {
@@ -27,7 +27,7 @@ function Contributors() {
     },
     {
       name: "Eromonsele Odigie",
-      role: "UI/UX designer and Frontend dev",
+      role: "UI/UX designer, Frontend dev",
       imgUrl: "/team5.jpg",
     },
   ];

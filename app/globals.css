@@ -23,3 +23,14 @@ body {
   background: var(--color-white);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.__role_text {
+  font-size: 12px;
+  font-style: italic;
+  text-transform: capitalize;
+  font-weight: 300;
+  line-height: 13.06px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
