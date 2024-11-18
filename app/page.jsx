@@ -1,4 +1,5 @@
 import Navbar from "./_components/Navbar";
+import Contributors from "./_sections/Contributors";
 import End from "./_sections/End";
 import Footer from "./_sections/Footer";
 import Hero from "./_sections/Hero";
@@ -17,6 +18,9 @@ export default function Home() {
       </section>
       <section className=' mx-auto container'>
         <Testimonials />
+      </section>
+      <section className=' mx-auto container'>
+        <Contributors />
       </section>
       <section className=' mx-auto container'>
         <End />

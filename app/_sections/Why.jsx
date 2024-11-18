@@ -20,9 +20,9 @@ const features = [
 
 function Why() {
   return (
-    <div className='flex flex-col bg-white'>
+    <div className='flex flex-col gap-8 bg-white py-20 md:py-24'>
       <div>
-        <h3 className=' text-4xl max-lg:text-2xl my-20'>
+        <h3 className=' text-4xl max-lg:text-2xl '>
           Why switch to decentralized
           <br />
           payment systems?

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import TitleHead from "../_components/TitleHead";
+import { FaRegSmile } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -34,9 +35,11 @@ export const Testimonials = () => {
   return (
     <section className='py-20 md:py-24 overflow-hidden'>
       <div className='container'>
-        <h2 className='text-4xl md:text-5xl font-medium text-center tracking-tighter'>
-          Reviews by our users
-        </h2>
+        <TitleHead
+          tag={"Testimonials"}
+          icon={<FaRegSmile />}
+          title={"what our users say"}
+        />
 
         <div className=' relative flex gap-8 mt-10 mb-10'>
           <div className=' [mask-image:linear-gradient(to_right,transparent,white_10%,white_80%,transparent)] pointer-events-none'></div>
