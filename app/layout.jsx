@@ -17,11 +17,14 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Sui-Fi",
+  icons: {
+    icon: "/public/logo.svg",
+  },
   description: "A decentralized finance platform, built on the sui blockchain.",
 };
 
-// PS: the WalletProvider is a client component, and can't be here, 
-// so i moved it to a seperate component, then import it into this 
+// PS: the WalletProvider is a client component, and can't be here,
+// so i moved it to a seperate component, then import it into this
 // layout file if not there would have been an error
 // check WalletProviderWrapper.jsx
 export default function RootLayout({ children }) {
