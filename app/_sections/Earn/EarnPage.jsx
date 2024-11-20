@@ -1,8 +1,7 @@
-// components/TransactionsList.js
-export default function WebTask() {
+export default function EarnPage() {
   return (
     <div className='mt-8 bg-white p-6 rounded-xl shadow-md'>
-      <h3 className='text-xl font-bold'>Web</h3>
+      <h3 className='text-xl font-bold'>Socials</h3>
       <div className='space-y-4 mt-6'>
         {[...Array(4)].map((_, index) => (
           <div
@@ -10,13 +9,13 @@ export default function WebTask() {
             className='flex justify-between items-center border-b px-4 py-1 rounded-2xl bg-gradient-to-r from-grad1 to-grad2'
           >
             <div className=' flex justify-center items-center gap-4'>
-              <img src='/image4.png' alt='' />
+              <img src='/twitterX.png' alt='' />
               <div>
                 <p className='text-black font-bold'>
-                  Complete Scallop Challenge
+                  Like and Retweet (+38.2 fi)
                 </p>
                 <p className='text-gray-500 text-sm'>
-                  Complete Scallop Challenge
+                  Beeg Blue new post on X, ‘’x.com/beegblue....
                 </p>
               </div>
             </div>

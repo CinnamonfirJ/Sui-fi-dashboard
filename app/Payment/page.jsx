@@ -16,6 +16,7 @@ import SectionHead from "../_components/SectionHead";
 import SocialsTask from "../_components/SocialsTask";
 import WebTask from "../_components/WebTask";
 import PaymentCard from "../_components/PaymentCard";
+import Pay from "../_components/Pay";
 
 export default function Payment() {
   const wallet = useWallet();
@@ -29,7 +30,7 @@ export default function Payment() {
   }, [wallet.connected, router]);
 
   return (
-    <div className='flex min-h-screen bg-gray-100'>
+    <div className='flex bg-gray-100'>
       <div className=' max-md:hidden'>
         <Sidebar />
       </div>
@@ -65,6 +66,9 @@ export default function Payment() {
                   <PaymentCard task='Airtime' img={"/phone.png"} />
                   <PaymentCard task='Electricity' img={"/lightningbolt.png"} />
                 </div>
+              </div>
+              <div>
+                <Pay />
               </div>
             </div>
           </div>

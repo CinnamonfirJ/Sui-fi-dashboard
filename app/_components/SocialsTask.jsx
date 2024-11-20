@@ -7,7 +7,7 @@ export default function SocialsTask() {
         {[...Array(4)].map((_, index) => (
           <div
             key={index}
-            className='flex justify-between items-center border-b p-4 rounded-2xl bg-gradient-to-r from-grad1 to-grad2'
+            className='flex justify-between items-center border-b px-4 py-2 rounded-2xl bg-gradient-to-r from-grad1 to-grad2'
           >
             <div className=' flex justify-center items-center gap-4'>
               <img src='/twitterX.png' alt='' />
@@ -22,9 +22,9 @@ export default function SocialsTask() {
             </div>
             <div className=' flex flex-col justify-center items-center gap-1'>
               <button className='bg-gradient-to-r from-primary to-accent text-white px-6 py-2 rounded-full shadow hover:bg-accent'>
-                Go
+                <a href='/Task'>Go</a>
               </button>
-              <div className=' flex justify-center items-center gap-4'>
+              <div className=' flex justify-center items-center gap-4 text-sm'>
                 <svg
                   width='5'
                   height='5'

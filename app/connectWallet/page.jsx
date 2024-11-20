@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className='flex flex-col gap-3 min-w-screen min-h-screen justify-center items-center bg-gray-100'>
-      <p className='font-bold text-xl text-primary'>
+      <p className='font-bold text-xl text-white'>
         Connect Your Wallet to Sign In
       </p>
       <ConnectButton className='bg-primary text-white hover:bg-accent'>
