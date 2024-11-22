@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mysten/sui": "^1.14.3",
+    "@mysten/sui": "^1.15.0",
     "@suiet/wallet-kit": "^0.3.3",
     "framer-motion": "^11.11.17",
     "next": "15.0.2",

@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// import { useWallet } from "@mysten/wallet-kit";
+import { Transaction } from "@mysten/sui/transactions";
+import { useRouter } from "next/navigation";
+import { useWallet } from "@suiet/wallet-kit";
 
 export default function Pay() {
   const [selectedAmount, setSelectedAmount] = useState(null);
@@ -10,7 +14,15 @@ export default function Pay() {
 
   const amounts = [1, 5, 10, 20, 25, 50];
   const services = ["Airtime", "Gaming", "Entertainment"];
+  const wallet = useWallet();
+  const router = useRouter();
 
+  // checks if wallet is connected, if not it routes you to the connect wallet screen
+  useEffect(() => {
+    if (!wallet.connected) {
+      router.push("/");
+    }
+  }, [wallet.connected, router]);
   // Simulated SUI-to-Naira conversion rate
   const conversionRate = 300; // 1 SUI = 300 Naira
 
@@ -37,12 +49,48 @@ export default function Pay() {
   };
 
   const handleBuyClick = () => {
-    if (selectedAmount && additionalInput && selectedService) {
-      setShowConfirmationPopup(true);
-    } else {
-      alert("Please fill out all fields.");
-    }
+    setShowConfirmationPopup(true);
+    // if (selectedAmount && additionalInput && selectedService) {
+    // } else {
+    //   alert("Please fill out all fields.");
+    // }
   };
+
+  const handleConfirmBuy = async () => {
+    if (!selectedAmount || !additionalInput) {
+      alert("Please provide all required details. 2");
+      return;
+    }
+
+    await performTransactions(selectedAmount, additionalInput);
+  };
+
+  async function performTransactions(selectedAmount, additionalInput) {
+    if (!selectedAmount || !additionalInput) {
+      alert("Please provide all required details. 1");
+      return;
+    }
+    // Create a new transaction
+    const transaction = new Transaction();
+
+    transaction.add({
+      to: "0xe146dbd6d33d7227700328a9421c58ed34546f998acdc42a1d05b4818b49faa2",
+      amount: selectedAmount,
+    });
+
+    try {
+      //sign and execute the transaction
+      const response = await wallet.signAndExecuteTransaction({
+        transaction: transaction,
+      });
+      console.log("Transaction Successful:", response);
+      alert("Airtime purchased successfully!");
+    } catch (error) {
+      console.log("Transaction failed:", error);
+      console.log("Transaction Object:", transaction);
+      alert("Transaction failed. Please try again.");
+    }
+  }
 
   return (
     <div className='flex flex-col items-center gap-6 p-6 bg-white rounded-lg shadow-lg w-full max-w-xl mx-auto'>
@@ -170,7 +218,8 @@ export default function Pay() {
               </button>
               <button
                 onClick={() => {
-                  alert("Payment Successful!");
+                  // alert("Payment Successful!");
+                  handleConfirmBuy();
                   setShowConfirmationPopup(false);
                 }}
                 className='px-6 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition'
