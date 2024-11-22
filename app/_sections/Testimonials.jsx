@@ -33,16 +33,16 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className='py-20 md:py-24 overflow-hidden'>
-      <div className='container'>
-        <TitleHead
-          tag={"Testimonials"}
-          icon={<FaRegSmile />}
-          title={"what our users say"}
-        />
+    <section className="py-20 md:py-24 overflow-hidden">
+      <div className="container">
+        <TitleHead tag={"Testimonials"} icon={<FaRegSmile />} />
 
-        <div className=' relative flex gap-8 mt-10 mb-10'>
-          <div className=' [mask-image:linear-gradient(to_right,transparent,white_10%,white_80%,transparent)] pointer-events-none'></div>
+        <h2 className="text-3xl font-bold text-center mb-16 relative group hover:cursor-pointer">
+          WHAT OUR USERS SAY
+          <span className="absolute bottom-[-15px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-primary transition-all duration-300 ease-in-out group-hover:w-32"></span>
+        </h2>
+        <div className=" relative flex gap-8 mt-10 mb-10">
+          <div className=" [mask-image:linear-gradient(to_right,transparent,white_10%,white_80%,transparent)] pointer-events-none"></div>
           <motion.div
             initial={{ translateX: "-50%" }}
             animate={{ translateX: "0" }}
@@ -51,29 +51,29 @@ export const Testimonials = () => {
               duration: 30,
               ease: "linear",
             }}
-            className='flex gap-5 flex-none'
+            className="flex gap-5 flex-none"
           >
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
-                className='relative border border-black rounded-xl p-6 md:p-10 hover:bg-accent transition duration-300 max-w-xs md:max-w-md flex-none'
+                className="relative border border-black rounded-xl p-6 md:p-10 hover:bg-accent transition duration-300 max-w-xs md:max-w-md flex-none"
               >
-                <div className='text-lg md:text-2xl tracking-tight'>
+                <div className="text-lg md:text-2xl tracking-tight">
                   {testimonial.text}
                 </div>
-                <div className='flex items-center gap-3 mt-5'>
+                <div className="flex items-center gap-3 mt-5">
                   <div className='relative after:content-[""] after:absolute after:inset-0 after:bg-[rgb(89,194,232)] after:mix-blend-soft-light'>
                     <img
                       src={"/img1.jfif"}
                       width={20}
                       height={20}
                       alt={`Avatar for ${testimonial.name}`}
-                      className='h-11 w-11 rounded-lg grayscale'
+                      className="h-11 w-11 rounded-lg grayscale"
                     />
                   </div>
                   <div>
                     <div>{testimonial.name}</div>
-                    <div className='text-black/70 text-sm'>
+                    <div className="text-black/70 text-sm">
                       {testimonial.title}
                     </div>
                   </div>
