@@ -181,6 +181,37 @@ export default function Pay() {
           </div>
         </div>
       )}
+
+      {/* Leave Confirmation Popup */}
+      {showLeavePopup && (
+        <div className='fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50'>
+          <div className='bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center animate-fadeIn'>
+            <h3 className='text-xl font-bold text-gray-800 mb-4'>
+              Payment is not yet complete
+            </h3>
+            <p className='text-sm font-bold text-gray-500 mb-4'>
+              Are you sure you want to leave?
+            </p>
+            <div className='flex justify-between'>
+              <button
+                onClick={() => {
+                  setShowConfirmationPopup(false);
+                  setShowLeavePopup(false);
+                }}
+                className='px-6 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 font-bold rounded-lg transition'
+              >
+                Leave
+              </button>
+              <button
+                onClick={() => setShowLeavePopup(false)}
+                className='px-6 py-2 bg-green-500 text-white hover:bg-green-600 font-bold rounded-lg transition'
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

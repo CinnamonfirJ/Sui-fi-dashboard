@@ -39,7 +39,10 @@ export default function Payment() {
         <div className='mt-10 grid grid-cols-3 max-lg:grid-cols-2 gap-6'>
           <div className='col-span-2'>
             <SectionHead title={"Payment"} search={true} />
-            <div className=' flex flex-col gap-8 '>
+            <div className=' flex flex-col gap-8 mt-8'>
+              <div>
+                <Pay />
+              </div>
               <div>
                 <h3 className='text-xl font-bold mb-6'>Recents</h3>
                 <div className=' grid grid-cols-4 max-lg:grid-cols-1  gap-6 '>
@@ -66,9 +69,6 @@ export default function Payment() {
                   <PaymentCard task='Airtime' img={"/phone.png"} />
                   <PaymentCard task='Electricity' img={"/lightningbolt.png"} />
                 </div>
-              </div>
-              <div>
-                <Pay />
               </div>
             </div>
           </div>
