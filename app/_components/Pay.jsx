@@ -28,7 +28,7 @@ export default function Pay() {
   const handleServiceChange = (e) => {
     setSelectedService(e.target.value);
     // Clear all inputs when switching services
-    setSelectedAmount(null);
+    // setSelectedAmount(null);
     setPhoneNumber("");
     setAdditionalInput("");
   };
