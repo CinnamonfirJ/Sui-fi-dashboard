@@ -16,7 +16,7 @@ function Contributors() {
       imgUrl: "/team2.jpg",
     },
     {
-      name: "David Aniefiok",
+      name: "David David",
       role: "Blockchain dev",
       imgUrl: "/team3.jpg",
     },
