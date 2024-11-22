@@ -14,21 +14,24 @@ export default function Pay() {
   // Simulated SUI-to-Naira conversion rate
   const conversionRate = 300; // 1 SUI = 300 Naira
 
+  // Format number with commas
+  const formatNumber = (num) => {
+    return new Intl.NumberFormat("en-US").format(num);
+  };
+
   const handleButtonClick = (amount) => {
     setSelectedAmount(amount);
   };
 
   const handleInputChange = (e) => {
     const value = e.target.value;
-    if (/^\d*$/.test(value)) {
+    if (/^\d*\.?\d*$/.test(value)) {
       setSelectedAmount(value);
     }
   };
 
   const handleServiceChange = (e) => {
     setSelectedService(e.target.value);
-    // Clear all inputs when switching services
-    // setSelectedAmount(null);
     setPhoneNumber("");
     setAdditionalInput("");
   };
@@ -54,12 +57,12 @@ export default function Pay() {
             key={amount}
             onClick={() => handleButtonClick(amount)}
             className={`px-6 py-3 text-lg font-semibold rounded-lg transition ${
-              selectedAmount === amount
+              selectedAmount == amount
                 ? "bg-green-500 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
-            + {amount} SUI
+            + {formatNumber(amount)} SUI
           </button>
         ))}
       </div>
@@ -77,7 +80,9 @@ export default function Pay() {
       {selectedAmount && (
         <p className='text-gray-600 mt-2'>
           Equivalent in Naira:{" "}
-          <strong>{selectedAmount * conversionRate} NGN</strong>
+          <strong>
+            {formatNumber((selectedAmount * conversionRate).toFixed(2))} NGN
+          </strong>
         </p>
       )}
 
@@ -131,11 +136,11 @@ export default function Pay() {
             </h3>
             <div className='space-y-2'>
               <p>
-                <strong>Amount:</strong> {selectedAmount} SUI
+                <strong>Amount:</strong> {formatNumber(selectedAmount)} SUI
               </p>
               <p>
                 <strong>Equivalent in Naira:</strong>{" "}
-                {selectedAmount * conversionRate} NGN
+                {formatNumber((selectedAmount * conversionRate).toFixed(2))} NGN
               </p>
               {selectedService === "Airtime" && (
                 <p>
@@ -171,37 +176,6 @@ export default function Pay() {
                 className='px-6 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition'
               >
                 Confirm
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Leave Confirmation Popup */}
-      {showLeavePopup && (
-        <div className='fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50'>
-          <div className='bg-white p-6 rounded-lg shadow-lg max-w-md text-center w-full animate-fadeIn'>
-            <h3 className='text-xl font-bold text-gray-800 mb-4'>
-              Payment is not yet complete
-            </h3>
-            <p className='text-sm font-bold text-gray-500 mb-4'>
-              Are you sure you want to leave
-            </p>
-            <div className='flex justify-between'>
-              <button
-                onClick={() => {
-                  setShowConfirmationPopup(false);
-                  setShowLeavePopup(false);
-                }}
-                className='px-6 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 font-bold rounded-lg transition'
-              >
-                Leave
-              </button>
-              <button
-                onClick={() => setShowLeavePopup(false)}
-                className='px-6 py-2 bg-green-500 text-white hover:bg-green-600 font-bold rounded-lg transition'
-              >
-                Continue
               </button>
             </div>
           </div>
