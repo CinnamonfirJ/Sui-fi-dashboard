@@ -4,7 +4,7 @@ import React from "react";
 function Hero() {
   return (
     <div className=' flex'>
-      <div className=' flex flex-col justify-center items-center py-32 px-40 max-lg:px-5 text-white'>
+      <div className=' flex flex-col justify-center items-center md:pt-10 px-40 max-lg:px-5 text-white'>
         <h1 className=' text-6xl max-lg:text-4xl text-center mb-12 font-bold'>
           Empowering Financial Freedom through Blockchain Solutions
         </h1>
