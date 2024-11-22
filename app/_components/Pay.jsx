@@ -180,10 +180,13 @@ export default function Pay() {
       {/* Leave Confirmation Popup */}
       {showLeavePopup && (
         <div className='fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50'>
-          <div className='bg-white p-6 rounded-lg shadow-lg max-w-md w-full animate-fadeIn'>
+          <div className='bg-white p-6 rounded-lg shadow-lg max-w-md text-center w-full animate-fadeIn'>
             <h3 className='text-xl font-bold text-gray-800 mb-4'>
-              Are you sure you want to leave?
+              Payment is not yet complete
             </h3>
+            <p className='text-sm font-bold text-gray-500 mb-4'>
+              Are you sure you want to leave
+            </p>
             <div className='flex justify-between'>
               <button
                 onClick={() => {
