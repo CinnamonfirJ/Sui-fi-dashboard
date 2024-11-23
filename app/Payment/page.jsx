@@ -11,7 +11,6 @@ import TransactionsList from "../_components/TransactionList";
 import ExpensePieChart from "../_components/PieChart";
 import QuickPayments from "../_components/QuickPayment";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import SectionHead from "../_components/SectionHead";
 import SocialsTask from "../_components/SocialsTask";
 import WebTask from "../_components/WebTask";
@@ -19,16 +18,6 @@ import PaymentCard from "../_components/PaymentCard";
 import Pay from "../_components/Pay";
 
 export default function Payment() {
-  const wallet = useWallet();
-  const router = useRouter();
-
-  // checks if wallet is connected, if not it routes you to the connect wallet screen
-  useEffect(() => {
-    if (!wallet.connected) {
-      router.push("/");
-    }
-  }, [wallet.connected, router]);
-
   return (
     <div className='flex bg-gray-100'>
       <div className=' max-md:hidden'>

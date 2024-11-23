@@ -17,6 +17,7 @@ export default function Pay() {
   const wallet = useWallet();
   const router = useRouter();
 
+  console.log(wallet)
   // checks if wallet is connected, if not it routes you to the connect wallet screen
   useEffect(() => {
     if (!wallet.connected) {
@@ -74,7 +75,7 @@ export default function Pay() {
     const transaction = new Transaction();
 
     transaction.add({
-      to: "0xe146dbd6d33d7227700328a9421c58ed34546f998acdc42a1d05b4818b49faa2",
+      to: wallet.address,
       amount: selectedAmount,
     });
 

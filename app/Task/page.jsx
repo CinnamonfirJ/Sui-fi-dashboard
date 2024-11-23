@@ -1,6 +1,5 @@
 "use client"; // Ensure this is a Client Component
 // pages/index.js
-import { useWallet } from "@suiet/wallet-kit";
 import Sidebar from "../_components/Sidebar";
 import Card from "../_components/Card";
 import MinerCard from "../_components/MinerCard";
@@ -11,21 +10,10 @@ import TransactionsList from "../_components/TransactionList";
 import ExpensePieChart from "../_components/PieChart";
 import QuickPayments from "../_components/QuickPayment";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import SectionHead from "../_components/SectionHead";
 import EarnPage from "../_sections/Earn/EarnPage";
 
 export default function Task() {
-  const wallet = useWallet();
-  const router = useRouter();
-
-  // checks if wallet is connected, if not it routes you to the connect wallet screen
-  useEffect(() => {
-    if (!wallet.connected) {
-      router.push("/");
-    }
-  }, [wallet.connected, router]);
-
   return (
     <div className='flex min-h-screen bg-gray-100'>
       <div className=' max-md:hidden'>

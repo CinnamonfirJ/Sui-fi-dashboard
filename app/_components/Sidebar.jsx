@@ -10,11 +10,21 @@ import {
   FaHome,
 } from "react-icons/fa";
 import { useWallet } from "@suiet/wallet-kit";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useEffect } from "react";
 
 // components/Sidebar.js
 export default function Sidebar() {
   const { connected, disconnect } = useWallet(); // destructuring the connect and disconnect function fron useWallet
+  const router = useRouter();
+
+  // checks if wallet is connected, if not it routes you to the connect wallet screen
+  useEffect(() => {
+    if (!connected) {
+      router.push("/");
+    }
+  }, [connected, router]);
 
   // function to isconnect the wallet and log you out
   const handleDisconnect = () => {
