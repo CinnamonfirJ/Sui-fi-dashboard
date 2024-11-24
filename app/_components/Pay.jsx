@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Transaction } from "@mysten/sui/transactions";
 import { useRouter } from "next/navigation";
 import { useWallet } from "@suiet/wallet-kit";
+// import { useAirtime } from "../context/useAirtime";
 
 export default function Pay() {
   const [selectedAmount, setSelectedAmount] = useState(null);
@@ -11,13 +12,18 @@ export default function Pay() {
   const [additionalInput, setAdditionalInput] = useState(""); // For meter or smart card number
   const [showConfirmationPopup, setShowConfirmationPopup] = useState(false);
   const [showLeavePopup, setShowLeavePopup] = useState(false); // For cancellation confirmation
+  const purchaseData = {
+    phoneNumber: "",
+    amount: 0,
+  };
 
   const amounts = [1, 5, 10, 20, 25, 50];
   const services = ["Airtime", "Gaming", "Entertainment"];
   const wallet = useWallet();
   const router = useRouter();
+  // const { buyAirtime } = useAirtime();
 
-  console.log(wallet)
+  console.log(wallet);
   // checks if wallet is connected, if not it routes you to the connect wallet screen
   useEffect(() => {
     if (!wallet.connected) {
@@ -51,6 +57,15 @@ export default function Pay() {
 
   const handleBuyClick = () => {
     setShowConfirmationPopup(true);
+    purchaseData.amount = formatNumber(
+      (selectedAmount * conversionRate).toFixed(2)
+    );
+    purchaseData.phoneNumber = phoneNumber.replace("0", "+234");
+    console.log(phoneNumber.replace("0", "+234"));
+
+    // buyAirtime(purchaseData);
+    console.log(`Here ${purchaseData.amount}`);
+    console.log(`Again ${purchaseData.phoneNumber}`);
     // if (selectedAmount && additionalInput && selectedService) {
     // } else {
     //   alert("Please fill out all fields.");
@@ -58,7 +73,11 @@ export default function Pay() {
   };
 
   const handleConfirmBuy = async () => {
-    if (!selectedAmount || !additionalInput) {
+    if (
+      !selectedAmount || selectedService === "Airtime"
+        ? !phoneNumber
+        : !additionalInput
+    ) {
       alert("Please provide all required details. 2");
       return;
     }
@@ -67,7 +86,11 @@ export default function Pay() {
   };
 
   async function performTransactions(selectedAmount, additionalInput) {
-    if (!selectedAmount || !additionalInput) {
+    if (
+      !selectedAmount || selectedService === "Airtime"
+        ? !phoneNumber
+        : !additionalInput
+    ) {
       alert("Please provide all required details. 1");
       return;
     }
@@ -155,8 +178,12 @@ export default function Pay() {
         selectedService === "Entertainment") && (
         <input
           type='text'
-          value={additionalInput}
-          onChange={(e) => setAdditionalInput(e.target.value)}
+          value={selectedService === "Airtime" ? phoneNumber : additionalInput}
+          onChange={(e) =>
+            selectedService === "Airtime"
+              ? setPhoneNumber(e.target.value)
+              : setAdditionalInput(e.target.value)
+          }
           placeholder={
             selectedService === "Airtime"
               ? "Enter Phone Number"
