@@ -11,6 +11,8 @@
   "dependencies": {
     "@mysten/sui": "^1.15.0",
     "@suiet/wallet-kit": "^0.3.3",
+    "africastalking": "^0.7.0",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.11.17",
     "next": "15.0.2",
     "react": "18.2.0",
@@ -21,6 +23,7 @@
     "victory": "^37.3.2"
   },
   "devDependencies": {
+    "@types/africastalking": "^0.6.2",
     "@types/node": "22.9.1",
     "@types/react": "18.3.12",
     "postcss": "^8",

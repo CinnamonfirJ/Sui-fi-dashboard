@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 // import Header from "./_components/Header";
 import WalletProviderWrapper from "./WalletProviderWrapper";
+// import { AirtimeProvider } from "./context/useAirtime";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,10 +35,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <WalletProviderWrapper>
+          {/* <AirtimeProvider> */}
           <div>
             {/* <Header /> */}
             {children}
           </div>
+          {/* </AirtimeProvider> */}
         </WalletProviderWrapper>
       </body>
     </html>
