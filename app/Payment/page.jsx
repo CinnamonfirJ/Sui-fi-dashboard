@@ -41,7 +41,7 @@ export default function Payment() {
                   <PaymentCard task='Electricity' img={"/lightningbolt.png"} />
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <h3 className='text-xl font-bold mb-6'>Essentials</h3>
                 <div className=' grid grid-cols-4 max-lg:grid-cols-1  gap-6 '>
                   <PaymentCard task='Gaming' img={"/gamepad.png"} />
@@ -58,7 +58,7 @@ export default function Payment() {
                   <PaymentCard task='Airtime' img={"/phone.png"} />
                   <PaymentCard task='Electricity' img={"/lightningbolt.png"} />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className='space-y-6'>
