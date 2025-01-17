@@ -21,7 +21,7 @@ export default function TeamSection() {
       image: '/team2.jpg',
     },
     {
-      name: 'David Aniefiok',
+      name: 'David David',
       role: 'Blockchain dev',
       image: '/team3.jpg',
     },
